@@ -14,7 +14,7 @@ import com.qa.TestingAssessmentWeek8.VetElements;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-public class ViewInfoTest {
+public class DeleteAnimalTest {
 	
 	WebDriver driver = null;
 	public static ExtentReports report;
@@ -34,10 +34,10 @@ public class ViewInfoTest {
 	}
 	
 	@Test
-	public void viewPetInfoTest() {
+	public void deleteAnimal() {
 		driver.get("http://10.0.10.10:4200/petclinic/welcome");
 
-		OwnerElements page = PageFactory.initElements(driver, OwnerElements.class);
+		VetElements page = PageFactory.initElements(driver, VetElements.class);
 		
 		Actions action = new Actions(driver);
 		
@@ -46,6 +46,8 @@ public class ViewInfoTest {
 		action.moveToElement(OwnerElements.ownerEd).click().perform();
 		
 	}
+	
+	
 	
 	@After
 	public void teardown() throws InterruptedException {

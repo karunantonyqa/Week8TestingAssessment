@@ -27,9 +27,6 @@ public class VisitRestControllerTest {
 	
 	JSONArray visits = new JSONArray();
 	JSONArray pets = new JSONArray();
-
-
-
 	
 	@BeforeClass
 	public static void intial() {
@@ -55,7 +52,7 @@ public class VisitRestControllerTest {
 		RequestSpecification request = RestAssured.given();
 		request.header("content-Type", "application/json");		
 		
-		owner.put("pets", pets);
+//		owner.put("pets", pets);
 		pets.put(pet);
 		pets.put(petType);
 		visits.put(visit);
@@ -89,6 +86,8 @@ public class VisitRestControllerTest {
 		Response response = (Response) request.given().body(visit.toString()).when().post("/").then().statusCode(201);
 
 		System.out.println(response.prettyPrint());
+		
+		test.log(LogStatus.INFO, "Owner post info");
 		
 		
 	}
