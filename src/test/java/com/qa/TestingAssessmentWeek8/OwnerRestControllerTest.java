@@ -83,11 +83,11 @@ public class OwnerRestControllerTest {
 		
 		Response response;
 		
-		response = (Response) request.given().body(owner.toString()).when().post().then().statusCode(201);
+		//response = (Response) request.given().body(owner.toString()).when().post().then().statusCode(201);
 		
 //		request.given().body(owner.toString()).when().post("/").then().statusCode(201);
 		
-		//RestAssured.given().contentType(ContentType.JSON).when().post("/").then().statusCode(201);
+		RestAssured.given().contentType(ContentType.JSON).body(owner.toString()).when().post("/").then().statusCode(201);
 		
 		test.log(LogStatus.INFO, "Post test executed");
 		

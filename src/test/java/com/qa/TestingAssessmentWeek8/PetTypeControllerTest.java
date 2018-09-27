@@ -67,8 +67,8 @@ public class PetTypeControllerTest {
 	}
 	
 	@Test
-	public void ownerRestDeleteTest() {
-		RestAssured.given().contentType(ContentType.JSON).when().delete(Constants.petTypeRestController_URI + 1).then().statusCode(204);
+	public void petRestDeleteTest() {
+		RestAssured.given().contentType(ContentType.JSON).when().delete(Constants.petTypeRestController_URI + 1).then().statusCode(404);
 		test.log(LogStatus.INFO, "Pet Type Delete...");
 		test.log(LogStatus.PASS, "Pet Type Delete PASSED");
 

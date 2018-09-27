@@ -29,6 +29,9 @@ public class VetElements {
 	@FindBy(xpath = "//*[@id=\"vet\"]/div[5]/div/button[2]")
 	public static WebElement vetSubmit;
 	
+	@FindBy(xpath = "//*[@id=\"vets\"]/tbody/tr[8]/td[1]")
+	public static WebElement vetName;
+	
 	public static void enterName(String first, String last) {
 		vetFirstName.sendKeys(first);
 		vetLastname.sendKeys(last);

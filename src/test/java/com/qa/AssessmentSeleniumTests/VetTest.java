@@ -1,5 +1,7 @@
 package com.qa.AssessmentSeleniumTests;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -44,15 +46,21 @@ public class VetTest {
 		action.moveToElement(VetElements.vetDropNav).click().perform();
 		action.moveToElement(VetElements.vetAddNew).click().perform();
 		
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 
 		
-		action.moveToElement(VetElements.vetFirstName).sendKeys("Karun").perform();
-		action.moveToElement(VetElements.vetLastname).sendKeys("Antony").perform();
+		action.moveToElement(VetElements.vetFirstName).click().sendKeys("Karun").perform();
+		action.moveToElement(VetElements.vetLastname).click().sendKeys("Antony").perform();
 		action.moveToElement(VetElements.vetTypeSelectBar).click().perform();
+		Thread.sleep(1000);
+
 		action.moveToElement(VetElements.vetTypeRadiology).click().perform();
+		Thread.sleep(1000);
+
 		action.moveToElement(VetElements.vetSubmit).click().perform();
 
+		System.out.println(VetElements.vetName.getText());
+		assertEquals("Karun Antony", VetElements.vetName.getText());
 		
 	}
 	
